@@ -1,7 +1,7 @@
 ## 간단한 코드 구조 설명
 0. 디렉터리 구조
-   디렉터리 구조는 과제 조건과 일치하게 설정한다.
    <img width="357" height="339" alt="image" src="https://github.com/user-attachments/assets/570ba83d-6b3c-4a3e-84ac-c34cebfe2745" />
+   디렉터리 구조는 과제 조건과 일치하게 설정한다.
    
 1. agent_a.py
    <img width="1606" height="205" alt="image" src="https://github.com/user-attachments/assets/91a40c4f-31a9-448c-b3f5-8a19bd591f98" />
