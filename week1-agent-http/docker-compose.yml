@@ -1,0 +1,16 @@
+services:
+  agent-a:
+    build: ./agent_a
+    container_name: agent-a
+    ports:
+      - "8000:8000"
+    depends_on:
+      - agent-b
+    cap_add:
+      - NET_ADMIN
+
+  agent-b:
+    build: ./agent_b
+    container_name: agent-b
+    ports:
+      - "8001:8001"
