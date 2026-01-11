@@ -1,0 +1,32 @@
+services:
+  agent-a:
+    build: ./agent_a
+    container_name: agent-a
+    depends_on:
+      - agent-b
+    environment:
+      AGENT_B_URL: "http://agent-b:8000/tool"
+    cap_add:
+      - NET_ADMIN
+
+  agent-b:
+    build: ./agent_b
+    container_name: agent-b
+    ports:
+      - "8000:8000"
+    depends_on:
+      - tool-server
+    environment:
+      TOOL_URL: "http://tool-server:8001/tool"
+    cap_add:
+      - NET_ADMIN
+
+  tool-server:
+    build: ./tool_server
+    container_name: tool-server
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/data:ro
+    cap_add:
+      - NET_ADMIN
